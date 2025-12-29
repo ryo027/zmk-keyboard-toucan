@@ -66,7 +66,7 @@
                 &kp JP_ZKHK     &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp 2
                 &kp LCTRL       &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp JP_SQT
                 &kp LSHFT       &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp JP_YEN
-                                &kp LGUI &lt adj_layer SPACE &kp TAB   &kp BSPC &lt nav_layer RET &kp RALT
+                                &kp LGUI &lt &adj_layer SPACE &kp TAB   &kp BSPC &lt &nav_layer RET &kp RALT
             >;
         };
 
