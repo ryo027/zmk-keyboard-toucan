@@ -60,17 +60,17 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        base_layer:base {
             display-name = "BASE";
             bindings = <
                 &kp JP_ZKHK     &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp 2
                 &kp LCTRL       &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp JP_SQT
                 &kp LSHFT       &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp JP_YEN
-                                &kp LGUI &lt ADJ SPACE &kp TAB   &kp BSPC &lt NAV RET &kp RALT
+                                &kp LGUI &lt adj_layer SPACE &kp TAB   &kp BSPC &lt nav_layer RET &kp RALT
             >;
         };
 
-        nav {
+        nav_layer:nav {
             display-name = "NAV";
             bindings = <
                 &kp TAB     &kp N1          &kp N2       &kp N3       &kp N4       &kp N5         &kp 7 &kp 8   &kp 9 &kp JP_MINUS   &kp N0 &kp BSPC
@@ -80,7 +80,7 @@
             >;
         };
 
-        sym {
+        sym_layer:sym {
             display-name = "SYM";
             bindings = <
                 &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp LPAR &kp JP_TILDE &kp BSPC
@@ -90,7 +90,7 @@
             >;
         };
 
-        adj {
+        adj_layer:adj {
             display-name = "ADJ";
             bindings = <
                 &kp TAB   &kp EXCL &kp AT &mkp LCLK &mkp RCLK &kp PRCNT   &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &kp JP_TILDE &kp BSPC
