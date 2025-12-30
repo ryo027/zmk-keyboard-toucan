@@ -58,8 +58,9 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
-                = <&macro_tap &kp SEMI>
-                = <&macro_release &kp LCTRL &kp LSHFT>;
+                , <&macro_tap &kp SEMI>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                ;
         };
 
         // ズームアウト: Ctrl + -
@@ -68,8 +69,9 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                = <&macro_tap &kp MINUS>
-                = <&macro_release &kp LCTRL>;
+                , <&macro_tap &kp MINUS>
+                , <&macro_release &kp LCTRL>
+                ;
         };
     };
 
