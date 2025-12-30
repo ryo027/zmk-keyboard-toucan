@@ -82,7 +82,7 @@
             display-name = "BASE";
             bindings = <
                 &kp JP_ZKHK     &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I      &kp O   &kp P    &mo SYM
-                &kp LSHFT       &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K      &kp L   &kp SEMI &kp JP_SQT
+                &kp LSHFT       &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K      &kp L   &kp SEMI &kp JP_AT
                 &kp LCTRL       &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp JP_YEN
                                 &kp LGUI &lt ADJ SPACE &kp TAB   &kp BSPC &lt NAV RET &kp LALT
             >;
