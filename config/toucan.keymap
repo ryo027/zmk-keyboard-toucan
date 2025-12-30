@@ -48,6 +48,29 @@
 #define SYM  2
 #define ADJ  3
 
+
+macros {
+    // ズームイン: Ctrl + ; (JISでプラスが印字されているキー)
+    zoom_in: zoom_in {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            = <&macro_tap &kp SEMI>
+            = <&macro_release &kp LCTRL>;
+    };
+
+    // ズームアウト: Ctrl + - (ほ)
+    zoom_out: zoom_out {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            = <&macro_tap &kp MINUS>
+            = <&macro_release &kp LCTRL>;
+    };
+};
+
 / {
 //    conditional_layers {
 //        compatible = "zmk,conditional-layers";
@@ -75,9 +98,9 @@ keymap {
         nav_layer: nav {
             display-name = "NAV";
             bindings = <
-                &kp TAB     &kp N1          &kp N2       &kp LEFT &kp UP   &kp RIGHT   &kp N7 &kp N8   &kp N9 &kp JP_MINUS   &kp N0 &kp BSPC
-                &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &kp LEFT &kp DOWN &kp RIGHT   &kp N4 &kp N5   &kp N6 &kp N0 &trans &trans
-                &kp LSHFT   &studio_unlock  &trans       &trans   &trans   &trans         &kp N1 &kp N2   &kp N3 &trans    &trans &trans
+                &kp TAB     &kp N1          &kp LEFT &kp UP   &kp RIGHT &zoom_in      &kp N7 &kp N8   &kp N9 &kp JP_MINUS   &kp N0 &kp BSPC
+                &bt BT_CLR  &bt BT_SEL 0    &kp LEFT &kp DOWN &kp RIGHT &zoom_out     &kp N4 &kp N5   &kp N6 &kp N0 &trans &trans
+                &kp LSHFT   &studio_unlock  &trans       &trans   &trans   &trans     &kp N1 &kp N2   &kp N3 &trans    &trans &trans
                                                 &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
             >;
         };
@@ -98,8 +121,8 @@ keymap {
             display-name = "ADJ";
             bindings = <
                 &kp ESC   &kp EXCL     &kp AT       &mkp RCLK    &mkp LCLK      &mkp MCLK       &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &kp JP_TILDE &kp BSPC
-                &kp LCTRL &trans       &trans       &mkp MB4     &mkp MB5       &kp JP_PIPE     &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp RBKT &kp BSLH &kp GRAVE
-                &kp LSHFT &kp JP_PRCNT &kp JP_ASTRK &kp JP_MINUS &kp JP_PLUS    &kp JP_EQUAL    &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp RBRC &kp PIPE &kp TILDE
+                &kp LCTRL &trans       &trans       &mkp MB4     &mkp MB5       &kp JP_PIPE     &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp JP_LBKT &kp BSLH &kp GRAVE
+                &kp LSHFT &kp JP_PRCNT &kp JP_ASTRK &kp JP_MINUS &kp JP_PLUS    &kp JP_EQUAL    &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp JP_RBKT &kp PIPE &kp TILDE
                                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
             >;
         };
