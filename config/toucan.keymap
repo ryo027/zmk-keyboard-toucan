@@ -67,7 +67,7 @@ keymap {
                 &kp JP_ZKHK     &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I      &kp O   &kp P    &mo SYM
                 &kp LSHFT       &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K      &kp L   &kp SEMI &kp JP_SQT
                 &kp LCTRL       &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp JP_YEN
-                                &kp LGUI &lt ADJ SPACE &kp TAB   &kp BSPC &lt NAV RET &kp RALT
+                                &kp LGUI &lt ADJ SPACE &kp TAB   &kp BSPC &lt NAV RET &kp LALT
             >;
         };
 
@@ -75,9 +75,9 @@ keymap {
         nav_layer: nav {
             display-name = "NAV";
             bindings = <
-                &kp TAB     &kp N1          &kp N2       &kp N3       &kp N4       &kp N5         &kp N7 &kp N8   &kp N9 &kp JP_MINUS   &kp N0 &kp BSPC
-                &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp N4 &kp N5   &kp N6 &kp N0 &trans &trans
-                &kp LSHFT   &studio_unlock  &trans       &trans       &trans       &trans         &kp N1 &kp N2   &kp N3 &trans    &trans &trans
+                &kp TAB     &kp N1          &kp N2       &kp LEFT &kp UP   &kp RIGHT   &kp N7 &kp N8   &kp N9 &kp JP_MINUS   &kp N0 &kp BSPC
+                &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &kp LEFT &kp DOWN &kp RIGHT   &kp N4 &kp N5   &kp N6 &kp N0 &trans &trans
+                &kp LSHFT   &studio_unlock  &trans       &trans   &trans   &trans         &kp N1 &kp N2   &kp N3 &trans    &trans &trans
                                                 &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
             >;
         };
@@ -86,8 +86,8 @@ keymap {
         sym_layer: sym {
             display-name = "SYM";
             bindings = <
-                &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp LPAR &kp JP_TILDE &kp BSPC
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp RBKT &kp BSLH &kp GRAVE
+                &kp TAB   &kp EXCL &kp AT &kp LEFT &kp UP &kp RIGHT   &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp LPAR &kp JP_TILDE &kp BSPC
+                &kp LCTRL &trans   &trans &kp LEFT   &kp DOWN   &kp RIGHT      &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp RBKT &kp BSLH &kp GRAVE
                 &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp RBRC &kp PIPE &kp TILDE
                                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
             >;
@@ -97,9 +97,9 @@ keymap {
         adj_layer: adj {
             display-name = "ADJ";
             bindings = <
-                &kp TAB   &kp EXCL &kp AT &mkp RCLK &mkp LCLK &kp PRCNT   &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &kp JP_TILDE &kp BSPC
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp RBKT &kp BSLH &kp GRAVE
-                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp RBRC &kp PIPE &kp TILDE
+                &kp ESC   &kp EXCL     &kp AT       &mkp RCLK    &mkp LCLK      &mkp MCLK       &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &kp JP_TILDE &kp BSPC
+                &kp LCTRL &trans       &trans       &mkp MB4     &mkp MB5       &kp JP_PIPE     &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp RBKT &kp BSLH &kp GRAVE
+                &kp LSHFT &kp JP_PRCNT &kp JP_ASTRK &kp JP_MINUS &kp JP_PLUS    &kp JP_EQUAL    &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp RBRC &kp PIPE &kp TILDE
                                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
             >;
         };
