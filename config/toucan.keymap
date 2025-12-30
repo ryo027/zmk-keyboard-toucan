@@ -49,6 +49,15 @@
 #define ADJ  3
 
 
+/ {
+//    conditional_layers {
+//        compatible = "zmk,conditional-layers";
+//        tri_layer {
+//            if-layers = <1 2>;
+//            then-layer = <3>;
+//        };
+//    };
+
 macros {
     // ズームイン: Ctrl + ; (JISでプラスが印字されているキー)
     zoom_in: zoom_in {
@@ -70,15 +79,6 @@ macros {
             = <&macro_release &kp LCTRL>;
     };
 };
-
-/ {
-//    conditional_layers {
-//        compatible = "zmk,conditional-layers";
-//        tri_layer {
-//            if-layers = <1 2>;
-//            then-layer = <3>;
-//        };
-//    };
 
 keymap {
         compatible = "zmk,keymap";
