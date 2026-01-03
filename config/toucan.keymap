@@ -114,7 +114,7 @@
                 &kp ESC   &none        &none        &mkp RCLK    &mkp LCLK    &mkp MCLK       &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &none       &none
                 &kp LSHFT &none        &none        &mkp MB4     &mkp MB5     &kp JP_PIPE     &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp JP_LBKT  &kp JP_RBKT &none
                 &kp LCTRL &kp JP_PRCNT &kp JP_ASTRK &kp JP_MINUS &kp JP_PLUS  &kp JP_EQUAL    &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp JP_LBRC  &kp JP_RBRC &none
-                                          &trans  &trans   &trams   &trans   &trans    &trans
+                                          &trans  &trans   &trans   &trans   &trans    &trans
             >;
         };
     };
