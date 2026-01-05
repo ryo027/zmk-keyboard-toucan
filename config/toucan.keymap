@@ -51,6 +51,17 @@
 #define ADJ  3
 
 / {
+    behaviors {
+        // 長押しでブートローダー、タップで元のキー（ここでは例として F12）
+        hp_boot: hp_boot {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <3000>; // 2秒間長押しで発動（誤爆防止のため長めが推奨）
+            bindings = <&bootloader>, <&kp>;
+        };
+    };
+
     macros {
         // ズームイン: Ctrl + Shift + ;
         zm_in: zm_in {
@@ -58,7 +69,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp SEMI>
+                , <&macro_tap &kp KP_PLUS>
                 , <&macro_release &kp LCTRL &kp LSHFT>
                 ;
         };
@@ -69,7 +80,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp MINUS>
+                , <&macro_tap &kp KP_MINUS>
                 , <&macro_release &kp LCTRL>
                 ;
         };
@@ -101,9 +112,9 @@
         sym_layer: sym {
             display-name = "SYM";
             bindings = <
-                &kp TAB   &kp F12  &kp F11 &kp F10  &kp F9  &kp PSCRN   &mkp MCLK &mkp LCLK  &mkp RCLK  &none      &none &trans
-                &kp LSHFT &kp F8   &kp F7  &kp F6   &kp F5  &kp DEL     &none     &none      &none      &none      &none &none
-                &kp LCTRL &kp F4   &kp F3  &kp F2   &kp F1  &kp INS     &none     &bt BT_PRV &bt BT_NXT &bt BT_CLR &none &none
+                &kp TAB   &kp F12  &kp F11 &kp F10  &kp F9  &kp PSCRN   &mkp MCLK &mkp LCLK  &mkp RCLK  &none      &none                  &trans
+                &kp LSHFT &kp F8   &kp F7  &kp F6   &kp F5  &kp DEL     &none     &none      &none      &none      &hp_boot &bootloader 0 &none
+                &kp LCTRL &kp F4   &kp F3  &kp F2   &kp F1  &kp INS     &none     &bt BT_PRV &bt BT_NXT &bt BT_CLR &none                  &none
                                           &trans    &trans   &trans   &trans   &trans    &trans
             >;
         };
@@ -111,9 +122,9 @@
         adj_layer: adj {
             display-name = "ADJ";
             bindings = <
-                &kp ESC   &none        &none        &mkp RCLK    &mkp LCLK    &mkp MCLK       &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &none       &none
-                &kp LSHFT &none        &none        &mkp MB4     &mkp MB5     &kp JP_PIPE     &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp JP_LBKT  &kp JP_RBKT &none
-                &kp LCTRL &kp JP_PRCNT &kp JP_ASTRK &kp JP_MINUS &kp JP_PLUS  &kp JP_EQUAL    &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp JP_LBRC  &kp JP_RBRC &none
+                &kp ESC   &none                   &none        &mkp RCLK    &mkp LCLK    &mkp MCLK       &kp JP_SQT  &kp JP_LPAR     &kp JP_RPAR &kp JP_TILDE &none       &none
+                &kp LSHFT &hp_boot &bootloader 0  &none        &mkp MB4     &mkp MB5     &kp JP_UNDER     &kp JP_DLLR &kp JP_PRCNT    &kp JP_AMPS &kp JP_LBKT  &kp JP_RBKT &none
+                &kp LCTRL &kp JP_PRCNT            &kp JP_ASTRK &kp JP_MINUS &kp JP_PLUS  &kp JP_EQUAL    &kp JP_EXCL &kp JP_DQT      &kp JP_HASH &kp JP_LBRC  &kp JP_RBRC &none
                                           &trans  &trans   &trans   &trans   &trans    &trans
             >;
         };
