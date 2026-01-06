@@ -69,6 +69,8 @@
         zm_in: zm_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;  // 少しだけ動作を遅らせて確実に認識させる
+            tap-ms = <30>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &msc SCRL_UP>
@@ -80,6 +82,8 @@
         zm_out: zm_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;  // 少しだけ動作を遅らせて確実に認識させる
+            tap-ms = <30>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &msc SCRL_DOWN>
