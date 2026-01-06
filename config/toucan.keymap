@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/mouse.rb>
 
 /* JIS Key Aliases */
 #define JP_ZKHK  GRAVE
@@ -63,24 +64,24 @@
     };
 
     macros {
-        // ズームイン: Ctrl + Shift + ;
+        // スクロールアップ (ズームイン相当): Ctrl + ホイール上
         zm_in: zm_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp KP_PLUS>
+                , <&macro_tap &msc SCRL_UP>
                 , <&macro_release &kp LCTRL>
                 ;
         };
 
-        // ズームアウト: Ctrl + -
+        // スクロールダウン (ズームアウト相当): Ctrl + ホイール下
         zm_out: zm_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp KP_MINUS>
+                , <&macro_tap &msc SCRL_DOWN>
                 , <&macro_release &kp LCTRL>
                 ;
         };
