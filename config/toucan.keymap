@@ -73,6 +73,7 @@
             tap-ms = <30>;
             bindings
                 = <&macro_press &kp LCTRL>
+                , <&macro_wait_time 100>
                 , <&macro_tap &msc SCRL_UP>
                 , <&macro_release &kp LCTRL>
                 ;
@@ -101,7 +102,7 @@
                 &kp JP_ZKHK &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I      &kp O   &kp P    &lt SYM JP_AT
                 &kp LSHFT   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K      &kp L   &kp SEMI &kp JP_COLON
                 &kp LCTRL   &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA  &kp DOT &kp FSLH &kp JP_YEN
-                                &kp LGUI &lt ADJ SPACE &kp TAB   &kp BSPC &lt NAV RET &kp LALT
+                                &kp LGUI &lt ADJ SPACE &kp TAB   &lt NAV BSPC &lt NAV RET &kp LALT
             >;
         };
 
